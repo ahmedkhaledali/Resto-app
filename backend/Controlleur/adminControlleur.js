@@ -5,6 +5,7 @@ postadmin: async (req, res) => {
         const prenom  = req.body.prenom;
         const  email  = req.body.email ;
         const motpass= req.body.motpass;
+        const image = req.body.image;
         
 
         try {
@@ -12,7 +13,8 @@ postadmin: async (req, res) => {
             nom,
             prenom,
             email,
-            motpass
+            motpass,
+            image
         
           });
           await admins.save();

@@ -5,14 +5,17 @@ postplat: async (req, res) => {
         const platsprincipaux = req.body.platsprincipaux;
         const  desserts  = req.body. desserts ;
         const sauces= req.body.sauces;
-        
+        const prix = req.body.prix;
+        const image = req.body.image;
 
         try {
           plats = new plat({
             entres,
             platsprincipaux,
             desserts,
-            sauces
+            sauces,
+            prix,
+            image
         
           });
           await plats.save();

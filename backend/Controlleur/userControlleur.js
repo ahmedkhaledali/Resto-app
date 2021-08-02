@@ -6,6 +6,7 @@ postuser: async (req, res) => {
         const email = req.body.email;
         const adress = req.body.adress;
         const motpass = req.body.motpass;
+        const image = req.body.image;
 
         try {
           users = new user1({
@@ -13,7 +14,8 @@ postuser: async (req, res) => {
             prenom,
             email,
             adress,
-            motpass
+            motpass,
+            image
           });
           await users.save();
           res.json(users);
