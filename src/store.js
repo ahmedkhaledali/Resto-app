@@ -10,8 +10,7 @@ const Reducers = combineReducers({
     userstore : UserReducer ,
     platstore : PlatReducer,
   commandestore :CommandeReducer,
-  adminstore :AdminReducer,
-  // duserstore : UserReducer
+  adminstore :AdminReducer
   });
   
   const store = createStore(Reducers,applyMiddleware(thunk));

@@ -2,7 +2,7 @@ import '../App.css'
 import axios from "axios";
 import {useEffect,useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { getuser,addUser,deleteuser} from '../action/actions'
+import { getuser,addUser,deleteuser,updateUser} from '../action/actions'
 import { getplat} from '../action/plataction'
 import { getcommande} from '../action/commandeaction'
 import { getadmin} from '../action/adminaction'
@@ -12,6 +12,8 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Form from 'react-bootstrap/Form'
+import Modal from 'react-bootstrap/Modal'
+import Updteuser from "./modal"
 
 
 const Dashborad = () => {
@@ -97,6 +99,8 @@ const admins = useSelector(state=>state.adminstore)
    console.log(admins, "did we ?");
 
 
+
+
 //   const [user,setUser]=useState([]);
 //   const getuser = () =>{
 //     axios
@@ -128,6 +132,7 @@ const admins = useSelector(state=>state.adminstore)
 // },[]);
 
   return (
+    <div>
     <div class="container-fluid">
 <div class="d-flex align-items-start  p-5">
   <div class="nav flex-column nav-pills me-3 barre" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -163,8 +168,9 @@ const admins = useSelector(state=>state.adminstore)
     <p> ID={el._id}</p>
     {el.adress}-{el.email}
     </Card.Text>
-    <Button variant="primary">Modifier</Button>
-   <button onClick={() => userdelete(el._id)}   class="bttn"><img src="https://img.icons8.com/ios/30/000000/delete--v1.png"/></button>
+      <button onClick={() => userdelete(el._id)}   class="bttn"><img src="https://img.icons8.com/ios/30/000000/delete--v1.png"/></button>
+      <Updteuser  id={el._id}  el={el} />
+
   </Card.Body>
 </Card>
 </Col>
@@ -172,6 +178,7 @@ const admins = useSelector(state=>state.adminstore)
 </Row>
     </div>
     <div class="tab-pane fade " id="v-pills-Ajouteruser" role="tabpanel" aria-labelledby="v-pills-Ajouteruser-tab">
+    
     <Form onSubmit={handelSubmit}>
 
   <Form.Group className="mb-3" >
@@ -360,7 +367,7 @@ const admins = useSelector(state=>state.adminstore)
   </div>
 
   </div>
-
+  </div>
   </div>
   
   );

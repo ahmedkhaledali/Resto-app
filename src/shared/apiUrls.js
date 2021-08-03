@@ -1,11 +1,11 @@
 
-export const SERVER_BASE_API = "http://localhost:4000/app"
+export const SERVER_BASE_API = "http://localhost:5002/app"
 
 //user
 
 export const GET_USER_API = `${SERVER_BASE_API}/getuser`
 export const ADD_USER_API = `${SERVER_BASE_API}/adduser`
-export const UPDATE_USER_API = `${SERVER_BASE_API}/:id/`
+export const UPDATE_USER_API = `${SERVER_BASE_API}/:id/update`
 export const DELETE_USER_API = `${SERVER_BASE_API}/:id`
 
 // //plat

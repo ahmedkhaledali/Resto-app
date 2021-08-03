@@ -24,13 +24,17 @@ Axios.get(GET_USER_API,{
 //
 
 export const deleteUser=(id)=> {
-  Axios.delete(`http://localhost:4000/app/${id}`).then(res=>res.data)
+  Axios.delete(`http://localhost:5002/app/${id}`).then(res=>res.data)
 }
 
 //
 
 
+//
 
+export const updUser=(id,nom,prenom,email,adress,image)=> {
+  Axios.put(`http://localhost:5002/app/${id}/update`,{nom,prenom,email,adress,image} ).then(res=>res.data).then(res=> window.location.reload());
+}
 
 
 

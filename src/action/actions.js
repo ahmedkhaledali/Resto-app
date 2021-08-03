@@ -1,6 +1,7 @@
 import {fetchUser} from '../requist'
 import {fetchAddUser} from '../requist'
 import{deleteUser} from '../requist'
+import{updUser} from '../requist'
 import axios from "axios";
 
 export function getuser() {
@@ -58,9 +59,9 @@ export const deleteuser = (id)=> async (dispatch) => {
 
 // 
 // update Menu
-  export const updateItem = (id,nom,prenom,email,adress,motpass,image) => async dispatch => {
+  export const updateUser = (id,nom,prenom,email,adress,image) => async dispatch => {
     try {
-      const res = await axios.put(`http://localhost:4000/app/${id}/update`,{nom,prenom,email,adress,motpass,image}) 
+      const res = await updUser (id,nom,prenom,email,adress,image) 
        
       dispatch({
         type:  "REACT_APP_UPDATE_PRODUIT", 
